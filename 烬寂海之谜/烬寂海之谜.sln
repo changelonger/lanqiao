@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "烬寂海之谜", "烬寂海之谜\烬寂海之谜.vcxproj", "{D43DA953-C0FE-4D87-8FD0-E49EF2A990A5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D43DA953-C0FE-4D87-8FD0-E49EF2A990A5}.Debug|x64.ActiveCfg = Debug|x64
+		{D43DA953-C0FE-4D87-8FD0-E49EF2A990A5}.Debug|x64.Build.0 = Debug|x64
+		{D43DA953-C0FE-4D87-8FD0-E49EF2A990A5}.Debug|x86.ActiveCfg = Debug|Win32
+		{D43DA953-C0FE-4D87-8FD0-E49EF2A990A5}.Debug|x86.Build.0 = Debug|Win32
+		{D43DA953-C0FE-4D87-8FD0-E49EF2A990A5}.Release|x64.ActiveCfg = Release|x64
+		{D43DA953-C0FE-4D87-8FD0-E49EF2A990A5}.Release|x64.Build.0 = Release|x64
+		{D43DA953-C0FE-4D87-8FD0-E49EF2A990A5}.Release|x86.ActiveCfg = Release|Win32
+		{D43DA953-C0FE-4D87-8FD0-E49EF2A990A5}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {70B98838-134F-4FF6-A195-2C8D3D6B9A64}
+	EndGlobalSection
+EndGlobal

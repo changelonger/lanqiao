@@ -1,0 +1,3 @@
+﻿  源.cpp
+D:\CODE\Github\lanqiao\烬寂海之谜\烬寂海之谜\源.cpp(19,29): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+  烬寂海之谜.vcxproj -> D:\CODE\Github\lanqiao\烬寂海之谜\x64\Debug\烬寂海之谜.exe
