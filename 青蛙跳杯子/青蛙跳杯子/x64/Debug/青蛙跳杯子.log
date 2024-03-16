@@ -1,0 +1,4 @@
+﻿  源.cpp
+D:\CODE\Github\lanqiao\青蛙跳杯子\青蛙跳杯子\源.cpp(34,15): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\CODE\Github\lanqiao\青蛙跳杯子\青蛙跳杯子\源.cpp(67,20): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+  青蛙跳杯子.vcxproj -> D:\CODE\Github\lanqiao\青蛙跳杯子\x64\Debug\青蛙跳杯子.exe
