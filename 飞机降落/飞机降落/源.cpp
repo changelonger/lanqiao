@@ -1,52 +1,65 @@
 #include <iostream>
 using namespace std;
-int v[10];
-int n = 0; int sum = 0; int flag = 0;
-int max(int a, int b)
-{
-    return (a > b) ? a : b;
-}
-void dfs(int arr[][3], int last)
-{
-    if (sum == n)
-    {
-        flag = 1;
+const int N = 15;
+int plan[N][3];
+//到达时间，盘旋时间，降落所需要的时间
+bool flag = false;
+int vis[N];
+int n = 0;
+void dfs(int num, int last, int count) {
+    if (count == n) {
+        flag = true;
         return;
     }
-    for (int i = 0; i < n; i++)
-    {
-        if (!v[i] && arr[i][0] + arr[i][1] >= last)
-        {
-            v[i] = 1;
-            sum++;
-            int m = max(last, arr[i][0]);
-            dfs(arr, m + arr[i][2]);
-            v[i] = 0;
-            sum--;
+    if (!flag) {
+        for (int i = 0; i < n; i++) {
+            if (flag == true)
+                return;
+            /*
+            结束的时间是 max(到达的时间,上一个的结束时间)+降落所需要的时间
+            */
+            if (vis[i] == 0 && last <= plan[i][0]+plan[i][1]) {
+                vis[i] = 1;
+                int end = max(last, plan[i][0]) + plan[i][2];
+                dfs(i, end, count+1);
+                vis[i] = 0;
+            }
         }
     }
-    
-
 }
 int main()
 {
     // 请在此输入您的代码
-    int T = 0; cin >> T;
-    while (T--)
-    {
+    int T;
+    cin >> T;
+    while (T--) {
+        flag = false;
         cin >> n;
-        int arr[3][3];
         for (int i = 0; i < n; i++)
             for (int j = 0; j < 3; j++)
-                cin >> arr[i][j];
-
-        dfs(arr, 0);
+                cin >> plan[i][j];
+        dfs(0, 0, 0);
         if (flag)
             cout << "YES" << endl;
         else
             cout << "NO" << endl;
-        flag = 0;
-        sum = 0;
     }
     return 0;
 }
+/*
+2
+3
+0 100 10
+10 10 10
+0 2 20
+3
+0 10 20
+10 10 20
+20 10 20
+
+2
+3
+0 10 20
+10 10 20
+20 10 20
+*/
