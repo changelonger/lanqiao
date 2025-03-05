@@ -13,9 +13,11 @@ while i<pow(x+1,0.5):
         x=x//i
     else:
         i+=1
-l.append(x)
+l.append(x) # 存的都是质因子
+print(l)
 s=set()     # ！！！！用于存因子 如10=1*2*5*10
 s.add(1)
+# 每次将已有因子与当前质因数相乘生成新因子
 for j in l:
     p=set()
     for k in s:
