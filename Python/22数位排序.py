@@ -1,0 +1,5 @@
+n=int(input())
+m=int(input())
+s=list(range(1,n+1))
+s.sort(key=lambda x:sum(int(i) for i in str(x)))
+print(s[m-1])
