@@ -1,14 +1,48 @@
-from collections import defaultdict
-n, m = [int(x) for x in input().split()]  # 读取n和m
-sq = [[0] * m for _ in range(n)]
-hs = defaultdict(list)
-res = 0
+n,m = map(int,input().split())
+from collections import Counter
+# a = [[i for i in list(map(int,input().split()))] for _ in range(n)]
+mm = max(m,n)
+a = [[0]*mm for i in range(mm)]
 for i in range(n):
-    x = input().split()  # 读取每一行的输入
+    l = list(map(int,input().split()))
     for j in range(m):
-        sq[i][j] = int(x[j])  # 将每个字符转换成整数并赋值到二维列表中
-        hs[sq[i][j]].append((i, j))
-# for v in hs.values():
-#     hs2 = defaultdict(int)
-#     for (x,y) in v:
-print(hs)
+        a[i][j] = l[j]
+# print(a)
+res = 0
+# 主对角线,分上下
+for i in range(mm):
+    x = Counter()
+    y = Counter()
+    for j in range(0,mm-i):
+        if a[i+j][j]:
+            x[a[i+j][j]]+=1
+        if a[j][j+i]:
+            y[a[j][j+i]]+=1
+    # print(x,y)
+    for v1 in x.values():
+        res+=v1*(v1-1)
+    for v2 in y.values():
+        res+=v2*(v2-1)
+
+# 负对角线
+for i in range(mm):
+    x = Counter()
+    y = Counter()
+    j = mm-1
+    while j>=i:
+        if a[mm-1-j+i][j]:
+            x[a[mm-1-j+i][j]]+=1
+        if a[mm-1-j][j-i]:
+            y[a[mm-1-j][j-i]]+=1
+        j-=1
+    # print(x,y)
+    if x==y:
+        for v1 in x.values():
+            res+=v1*(v1-1)
+        continue
+    for v1 in x.values():
+        res+=v1*(v1-1)
+    for v2 in y.values():
+        res+=v2*(v2-1)
+print(res)
+
